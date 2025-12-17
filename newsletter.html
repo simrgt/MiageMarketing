@@ -39,7 +39,6 @@
 </head>
 <body class="h-screen flex flex-col antialiased text-gray-900">
 
-    <!-- macOS Window Bar -->
     <div class="h-10 bg-[#e3e3e3] border-b border-gray-300 flex items-center px-4 justify-between select-none">
         <div class="flex gap-2">
             <div class="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e]"></div>
@@ -49,13 +48,10 @@
         <div class="text-sm font-semibold text-gray-600 flex gap-4">
             <span class="opacity-50"> 📥 Boîte de réception</span>
         </div>
-        <div class="w-16"></div> <!-- Spacer pour centrer -->
-    </div>
+        <div class="w-16"></div> </div>
 
-    <!-- Main Layout: Sidebar + Preview -->
     <div class="flex-1 flex overflow-hidden">
         
-        <!-- Sidebar: Liste des Mails -->
         <div class="w-full md:w-80 bg-[#f5f5f7] border-r border-gray-300 flex flex-col flex-shrink-0">
             <div class="p-3 border-b border-gray-200">
                 <input type="text" placeholder="Rechercher" class="w-full bg-[#e3e3e5] rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400 text-center placeholder-gray-500">
@@ -64,7 +60,6 @@
             <div class="overflow-y-auto flex-1">
                 <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">Aujourd'hui</div>
                 
-                <!-- Mail 1: Rentrée -->
                 <div onclick="openMail('rentree')" id="tab-rentree" class="mail-item cursor-pointer px-4 py-3 border-b border-gray-200 hover:bg-white transition-colors active">
                     <div class="flex justify-between items-baseline mb-1">
                         <h3 class="font-bold text-sm">Apple France</h3>
@@ -74,7 +69,6 @@
                     <p class="text-xs text-gray-500 line-clamp-2">Votre écosystème Apple vous attend. AirPods offerts + AppleCare -20% sur...</p>
                 </div>
 
-                <!-- Mail 2: Confidentialité -->
                 <div onclick="openMail('privacy')" id="tab-privacy" class="mail-item cursor-pointer px-4 py-3 border-b border-gray-200 hover:bg-white transition-colors">
                     <div class="flex justify-between items-baseline mb-1">
                         <h3 class="font-bold text-sm">Apple</h3>
@@ -86,25 +80,18 @@
             </div>
         </div>
 
-        <!-- Preview Pane: Contenu du Mail -->
         <div class="flex-1 bg-white overflow-y-auto relative" id="main-view">
             
-            <!-- En-tête de lecture style Mac -->
             <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-gray-100 p-6 z-10" id="mail-header">
-                <!-- Rempli par JS -->
-            </div>
+                </div>
 
-            <!-- Contenu Newsletter -->
             <div class="p-4 md:p-8 bg-gray-50 min-h-full">
                 
-                <!-- NEWSLETTER 1: RENTRÉE -->
                 <div id="content-rentree" class="newsletter-content rounded-xl overflow-hidden shadow-sm">
-                    <!-- Apple Logo Header -->
                     <div class="text-center py-8 bg-white">
                         <svg class="w-8 h-8 mx-auto text-black" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.79-1.31.02-2.3-1.23-3.14-2.47-1.72-2.48-2.93-7.03-1.23-10 0.85-1.48 2.37-2.42 4.02-2.45 1.29-.03 2.51.87 3.3.87 0.79 0 2.26-1.07 3.81-0.91 0.65.03 2.47.26 3.64 1.98-0.09.06-2.17 1.27-2.15 3.76 0.03 2.99 2.64 3.99 2.68 4.01-0.02.06-0.42 1.44-1.32 2.74z M13 3.5c.73-.89 1.22-2.13 1.08-3.37-1.05.04-2.32.7-3.07 1.58-.67.78-1.26 2.04-1.11 3.24 1.17.09 2.37-.57 3.1-1.45z"/></svg>
                     </div>
 
-                    <!-- Hero Image -->
                     <div class="w-full h-auto">
                         <img src="Image1.png" alt="Bureau Apple" class="w-full object-cover">
                     </div>
@@ -117,7 +104,6 @@
                         </p>
                     </div>
 
-                    <!-- Offer Block -->
                     <div class="bg-[#f5f5f7] py-12 px-6 text-center">
                         <div class="text-red-600 font-semibold text-xs tracking-widest uppercase mb-2">Offre Limitée</div>
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">AirPods offerts.</h2>
@@ -144,7 +130,6 @@
                     </div>
                 </div>
 
-                <!-- NEWSLETTER 2: PRIVACY (Initialement masquée) -->
                 <div id="content-privacy" class="newsletter-content rounded-xl overflow-hidden shadow-sm hidden">
                     <div class="text-center py-8 bg-white">
                         <svg class="w-8 h-8 mx-auto text-black" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.79-1.31.02-2.3-1.23-3.14-2.47-1.72-2.48-2.93-7.03-1.23-10 0.85-1.48 2.37-2.42 4.02-2.45 1.29-.03 2.51.87 3.3.87 0.79 0 2.26-1.07 3.81-0.91 0.65.03 2.47.26 3.64 1.98-0.09.06-2.17 1.27-2.15 3.76 0.03 2.99 2.64 3.99 2.68 4.01-0.02.06-0.42 1.44-1.32 2.74z M13 3.5c.73-.89 1.22-2.13 1.08-3.37-1.05.04-2.32.7-3.07 1.58-.67.78-1.26 2.04-1.11 3.24 1.17.09 2.37-.57 3.1-1.45z"/></svg>
@@ -160,35 +145,87 @@
                         <img src="Image4.png" alt="Privacy Abstract" class="w-full h-64 object-cover">
                     </div>
 
-                    <div class="px-8 md:px-16 py-12 bg-white">
-                        <p class="text-lg leading-relaxed text-gray-800 mb-6 font-bold">Chère utilisatrice, cher utilisateur,</p>
-                        <p class="text-lg leading-relaxed text-gray-600 mb-6">Dans un monde où vos données personnelles sont devenues une monnaie d'échange, Apple fait un choix différent.</p>
+                    <div class="px-8 md:px-12 py-12 bg-white">
+                        <div class="mb-12">
+                            <p class="text-lg leading-relaxed text-gray-900 mb-6 font-semibold">Chère utilisatrice, cher utilisateur,</p>
+                            <p class="text-lg leading-relaxed text-gray-600 mb-6">
+                                Votre iPhone vous accompagne partout. Il connaît vos habitudes, vos lieux favoris, votre santé et vos conversations les plus intimes. Dans un monde numérique où les données personnelles sont trop souvent monétisées, nous faisons un choix radicalement différent.
+                            </p>
+                            <p class="text-lg leading-relaxed text-gray-600">
+                                Nous croyons que la technologie doit servir l'humain sans le surveiller. Voici comment nous construisons cette promesse, fonctionnalité après fonctionnalité.
+                            </p>
+                        </div>
+
+                        <hr class="border-gray-100 my-10">
                         
-                        <div class="my-10 space-y-8">
-                            <div class="flex gap-4">
-                                <span class="text-2xl">🔒</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-8">Les 3 piliers de votre protection</h3>
+                        <div class="space-y-8 mb-12">
+                            <div class="flex gap-5">
+                                <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-600 text-xl">☁️</div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Chiffrement de bout en bout</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Vos données iCloud sont illisibles, même pour nous.</p>
+                                    <h4 class="font-bold text-gray-900 text-lg">Minimisation des données</h4>
+                                    <p class="text-gray-600 mt-2 leading-relaxed">Nous concevons nos produits pour collecter le moins de données possible. Si nous n'en avons pas besoin pour faire fonctionner une app, nous ne la demandons pas.</p>
                                 </div>
                             </div>
-                            <div class="flex gap-4">
-                                <span class="text-2xl">🛡️</span>
+                            <div class="flex gap-5">
+                                <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-green-600 text-xl">📱</div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Transparence totale (ATT)</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Vous décidez quelle app peut vous suivre. Un clic pour refuser.</p>
+                                    <h4 class="font-bold text-gray-900 text-lg">Traitement sur l'appareil</h4>
+                                    <p class="text-gray-600 mt-2 leading-relaxed">C'est la clé de voûte de notre sécurité. Vos photos, vos données Siri ou vos scans FaceID sont traités par la puce de votre iPhone, pas sur nos serveurs. Ce qui reste sur votre iPhone reste à vous.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5">
+                                <div class="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600 text-xl">🔒</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-lg">Transparence et Contrôle</h4>
+                                    <p class="text-gray-600 mt-2 leading-relaxed">Vous devez savoir quelles données sont partagées et comment elles sont utilisées. C'est vous qui décidez, toujours.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-blue-50 p-6 rounded-xl text-center">
-                            <h3 class="font-bold text-gray-900 mb-2">Vérifiez votre sécurité</h3>
-                            <a href="#" class="text-[#0071e3] font-medium hover:underline">Accéder aux réglages de confidentialité ›</a>
+                        <div class="bg-gray-50 rounded-2xl p-8 mb-12">
+                            <h3 class="text-xl font-bold text-gray-900 mb-6">Concrètement, au quotidien</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-white p-5 rounded-xl shadow-sm">
+                                    <h5 class="font-bold text-gray-900 mb-2">Safari Intelligent Tracking</h5>
+                                    <p class="text-sm text-gray-500">Safari empêche les traceurs de vous suivre de site en site pour vous profiler publicitairement.</p>
+                                </div>
+                                <div class="bg-white p-5 rounded-xl shadow-sm">
+                                    <h5 class="font-bold text-gray-900 mb-2">Apple Pay</h5>
+                                    <p class="text-sm text-gray-500">Apple ne sait pas ce que vous achetez. Et le commerçant ne voit jamais votre vrai numéro de carte.</p>
+                                </div>
+                                <div class="bg-white p-5 rounded-xl shadow-sm">
+                                    <h5 class="font-bold text-gray-900 mb-2">App Tracking (ATT)</h5>
+                                    <p class="text-sm text-gray-500">Chaque app doit vous demander la permission explicite avant de vous pister.</p>
+                                </div>
+                                <div class="bg-white p-5 rounded-xl shadow-sm">
+                                    <h5 class="font-bold text-gray-900 mb-2">Santé</h5>
+                                    <p class="text-sm text-gray-500">Vos données médicales sont chiffrées. Même Apple ne peut pas les lire.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-black pl-6 py-2 mb-12">
+                            <h4 class="font-bold text-gray-900 uppercase tracking-wide text-xs mb-2">Le saviez-vous ?</h4>
+                            <p class="text-gray-700 italic font-serif-apple text-lg">
+                                "Lorsque vous envoyez un iMessage, il est chiffré de bout en bout. Seul le destinataire possède la clé mathématique pour le déchiffrer. Pas même un mandat judiciaire ne peut nous permettre de lire vos messages, car nous ne possédons pas la clé."
+                            </p>
+                        </div>
+
+                        <div class="bg-blue-600 rounded-xl p-8 text-center text-white">
+                            <h3 class="font-bold text-2xl mb-2">Prenez le contrôle.</h3>
+                            <p class="text-blue-100 mb-6 text-sm">Vérifiez dès maintenant quelles applications ont accès à vos données.</p>
+                            
+                            <div class="flex flex-col gap-3">
+                                <a href="#" class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold text-sm hover:bg-gray-100 transition">Ouvrir le Rapport de Confidentialité</a>
+                                <a href="#" class="text-white text-xs underline opacity-80 mt-2">Lire le livre blanc sur la sécurité iOS ›</a>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="bg-white py-8 px-6 text-xs text-gray-400 text-center border-t border-gray-100">
-                        <p>Cet email est purement informatif. Aucun traceur publicitaire.</p>
+                        <p>Cet email a un but purement informatif. Aucun traceur publicitaire n'a été inséré dans ce message.</p>
+                        <p class="mt-2">Copyright © 2025 Apple France. Confidentialité & Sécurité.</p>
                     </div>
                 </div>
 
